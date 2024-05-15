@@ -4,17 +4,19 @@ import { Logo_url } from '../../Services/Constants';
 import style from '../../StyleComponent/Card.module.scss';
 import { fetchData } from '../../Services/ApiCall';
 import ShimmerComponent from '../Shimmer/Shimmer';
-import { setCardData } from '../../Reduxtoolkit/slice/homeslice'; 
-import { Link } from 'react-router-dom';
+import { setCardData } from '../../Reduxtoolkit/slice/homeslice';
+import { useNavigate } from 'react-router-dom';
 
 const CardComponent = () => {
   const dispatch = useDispatch();
-  const { inputsearch, carddata } = useSelector((state) => state.inputFieldSlice);
+  const { inputsearch, carddata } = useSelector(
+    (state) => state.inputFieldSlice
+  );
 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       const result = await fetchData();
-      dispatch(setCardData(result)); 
+      dispatch(setCardData(result));
     };
 
     fetchDataFromAPI();
@@ -25,35 +27,28 @@ const CardComponent = () => {
         item.title.toLowerCase().includes(inputsearch.toLowerCase())
       )
     : carddata;
+    const navigate = useNavigate();
 
+    const handleClick = (id) => {
+      navigate(`/details/${id}`);
+    };
   return (
     <div className={`${style.container_data} container`}>
       {filteredData.length ? (
         <div className={`${style.parentCard}`}>
           {filteredData.map((item, index) => {
-            return(
-                <div className={style.cardWrapper} key={index}>
-
+            return (
+              <div className={style.cardWrapper} key={index} onClick={()=>handleClick(item.id)}>
                 <div className={style.card_info}>
                   <div className={style.cardImg}>
                     <img src={Logo_url} alt="logo" />
                   </div>
-                  <Link to={`/details/${item.id}`} key={index}>
-
-                  <h4>{item.title}</h4>
-                  </Link>
-
+                    <h4>{item.title}</h4>
                   <p>{item.body}</p>
                 </div>
-
               </div>
-              
-             
-            )
-          }
-
-           
-          )}
+            );
+          })}
         </div>
       ) : (
         <ShimmerComponent />
