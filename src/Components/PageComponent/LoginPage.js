@@ -14,7 +14,10 @@ const LoginPage = () => {
     email: yup.string().required(),
     password: yup.string().required(),
   });
-
+const handleSubmit=(e)=>{
+  e.preventDeafault();
+  console.log(e)
+}
   return (
     <Modal show={isshow} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -23,7 +26,7 @@ const LoginPage = () => {
       <Modal.Body>
         <Formik
           validationSchema={schema}
-          onSubmit={console.log}
+          onSubmit={handleSubmit}
           initialValues={{
             email: '',
             password: '',
