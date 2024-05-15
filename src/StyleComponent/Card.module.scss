@@ -70,6 +70,11 @@
   .parentCard {
     .cardWrapper {
       width: 100%;
+      .card_info {
+        &.cardInfoDetail {
+          width: 100%;
+        }
+      }
     }
   }
 }
