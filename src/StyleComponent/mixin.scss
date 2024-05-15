@@ -1,0 +1,19 @@
+@import "./variable.scss";
+@mixin commonFont{
+    color: $color_grey;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: 1px solid $color_grey;
+    background-color: transparent;
+
+
+}
+@mixin flex_property{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin fontfamily{
+    font-family: 'Times New Roman', Times, serif;
+}    
+

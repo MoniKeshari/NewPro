@@ -1,0 +1,102 @@
+@import './mixin.scss';
+@import './variable.scss';
+.containerfluid {
+    background: $color_black_dark;
+    .containerdiv {
+        padding: 80px 0px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        color: $color_white;
+        font-size: medium;
+    .list_first_ul{
+        display: flex;
+        justify-content:space-around; 
+        flex-direction: row;
+    }
+        img {
+            color: $color_white;
+        }
+    
+        ul {
+            list-style: none;
+    
+            .list_head {
+                margin-bottom: 27px;
+    
+            }
+    
+            .list_head span {
+                font-size: 22px;
+                letter-spacing: 0;
+                font-weight: 100;
+                color: $color_white;
+                line-height: 25px;
+    
+    
+            }
+    
+            li span {
+                color: $color_white;
+                font-size: 17px;
+                line-height: 17px;
+
+                font-weight: 400;
+    
+            }
+    
+            .paragraph {
+                width: 50%;
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 0;
+                font-weight: 200;
+                color:$color_black;
+            }
+    
+    
+        }
+    }
+    
+
+    .second_footer {
+        padding: 13px 0px ;
+        display: flex;
+        justify-content: space-between;
+
+        .firts_div {
+            display: flex;
+            justify-content:flex-start;
+            color: $color_white;
+            font-size: 14px;
+            letter-spacing: 0;
+            font-weight: 100;
+        }
+
+        .second_div {
+            display: flex;
+            justify-content:end;
+
+            p {
+                font-size: 14px;
+                letter-spacing: 0;
+                color: $color_white;
+                font-weight: 100;
+                margin: 0;
+                margin-right: 15px;
+            }
+            .ul_list{
+             
+                ul{
+                    list-style:none;
+                    display: flex;
+                    justify-content:space-around; 
+                    flex-direction: row;
+                    gap:10px;
+                }
+            }
+        }
+    }
+}
+
+

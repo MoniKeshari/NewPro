@@ -68,4 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# NewPro
+
+
+### In this project fetch data from api and displaying data on web browser
+### when click card of title it will navigate another page like detail page 
+### login page also done but authentication are remaining.
+### searching functionalities are working fine 
+### I used shimmer for better user experience
+### I used Redux toolkit for managing global state management
+### I used Code spliting for optimizing performance of React
+### I used React-router-dom for navigating page.
+### I used Sass, React-Bootstrap for making Interactive web application.

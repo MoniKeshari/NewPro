@@ -1,0 +1,75 @@
+@import './mixin.scss';
+@import './variable.scss';
+.container_data {
+  margin-top: 25px;
+}
+
+ h2{
+    @include fontfamily;
+    font-weight: 600;
+ }
+  h4 {
+    font-size: 20px;
+    @include fontfamily;
+
+    color:$color_black_dark;
+    font-weight: 600;
+  }
+  p {
+    @include fontfamily;
+    font-size: 16px;
+    color:$color_black_dark;
+
+    font-weight: 400;
+  }
+.parentCard {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 20px;
+  .cardWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 30%;
+    &.card_detail {
+      width: 100%;
+    }
+    .card_info {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 0.3rem 0.1rem $color_light;
+      width: 27rem;
+      height: auto;
+      border-radius: 0.7rem;
+      padding: 0.7rem 2rem 1rem;
+      &.cardInfoDetail {
+        width: 50%;
+      }
+      .cardImg {
+        height: 40px;
+        width: 40px;
+        background-color: $color_lightcyan;
+        border-radius: 50%;
+        @include flex_property;
+        img {
+          width: 24px;
+          height: 24px;
+          inset: 0px;
+          color: transparent;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .parentCard {
+    .cardWrapper {
+      width: 100%;
+    }
+  }
+}
